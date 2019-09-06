@@ -1,0 +1,56 @@
+<div class="content">
+
+  <p-messages [value]="msgs"></p-messages>
+
+  <div style="margin-top: 3em;">
+    <form [formGroup]="itemForm">
+      <p-fieldset>
+
+        <p-header>
+          <div class="ui-g-12" style="display: inline-flex;">
+            <img src="../assets/15.png" alt="Smiley face" height="80" width="80">
+            <p> Detalii Contact </p>
+          </div>
+        </p-header>
+
+        <div class="ui-g-12">
+          <div class="ui-g-3">
+            <b><span style="color: red">*</span></b>
+            <label for="name">Nume:</label>
+            <input id="name" pInputText type="text" style="width: 100%;" formControlName="name" />
+          </div>
+
+          <div class="ui-g-3">
+            <b><span style="color: red">*</span></b>
+            <label for="legalEntity">Juridic:</label>
+            <p-dropdown [options]="legalEntityOptions" placeholder="Alege" [style]="{'width':'100%'}"
+              formControlName="legalEntity">
+            </p-dropdown>
+          </div>
+
+          <div class="ui-g-3">
+            <b><span style="color: red">*</span></b>
+            <label for="email">Email:</label>
+            <input id="email" pInputText type="text" style="width: 100%;" formControlName="email" />
+          </div>
+
+          <div class="ui-g-3">
+            <b><span style="color: red">*</span></b>
+            <label for="telephone">Telefon:</label>
+            <p-inputMask mask="(9999) 999-999" placeholder="(9999) 999-999" [style]="{'width':'100%'}"
+              formControlName="telephone"></p-inputMask>
+          </div>
+        </div>
+      </p-fieldset>
+    </form>
+
+    <div class="wrap" style="float: left;">
+      <button class="button" (click)="goBack()">Inapoi</button>
+    </div>
+
+    <div class="wrap">
+      <button class="button" (click)="add()">Adauga</button>
+    </div>
+
+  </div>
+</div>

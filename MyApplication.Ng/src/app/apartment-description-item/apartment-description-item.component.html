@@ -1,0 +1,113 @@
+<div class="content">
+  <p-messages [value]="msgs"></p-messages>
+
+  <form [formGroup]="itemForm">
+
+    <div class="ui-g-12">
+
+      <div class="ui-g-6">
+        <p-fieldset>
+          <p-header>
+            <div class="ui-g-12" style="display: inline-flex;">
+              <img src="../assets/12.png" alt="Smiley face" height="60" width="60">
+              <p> Descriere </p>
+            </div>
+          </p-header>
+
+          <div class="ui-g-12">
+            <div class="ui-g-2">
+              <b><span style="color: red">*</span></b>
+              <label for="title">Titlu:</label>
+            </div>
+            <div class="ui-g-10">
+              <input id="title" pInputText type="text" style="width: 100%;" (input)="onTitleChanged()"
+                formControlName="title" />
+              <span style="color: red; font-size: 12px;"> ( Caractere ramase: {{titleCharsLeft}} )</span>
+            </div>
+          </div>
+
+          <div class="ui-g-12">
+            <div class="ui-g-2">
+              <b><span style="color: red">*</span></b>
+              <label for="description">Descriere anunt:</label>
+            </div>
+            <div class="ui-g-10">
+              <textarea pInputTextarea style="width: 100%;" formControlName="description"
+                (input)="onDescriptionChanged()"></textarea>
+              <span style="color: red; font-size: 12px;"> ( Caractere ramase: {{descriptionCharsLeft}} )</span>
+            </div>
+          </div>
+        </p-fieldset>
+
+        <div class="ui-g-12">
+          <div class="ui-g-6">
+            <b><span style="color: red">*</span></b>
+            <label for="price">Pret:</label>
+            <input id="price" pInputText type="text" style="width: 100%;" formControlName="price" />
+          </div>
+
+          <div class="ui-g-6">
+            <b><span style="color: red">*</span></b>
+            <label for="currency">Moneda:</label>
+            <p-dropdown [options]="currencyOptions" placeholder="Alege" [style]="{'width':'100%'}"
+              formControlName="currency">
+            </p-dropdown>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ui-g-6" style="margin-top: 5%;">
+
+        <div class="ui-g-12">
+
+          <div class="ui-g-6">
+            <b><span style="color: red">*</span></b>
+            <label for="county">Judet:</label>
+            <input id="county" pInputText type="text" style="width: 100%;" formControlName="county" />
+          </div>
+
+          <div class="ui-g-6">
+            <b><span style="color: red">*</span></b>
+            <label for="locality">Localitate:</label>
+            <input id="locality" pInputText type="text" style="width: 100%;" formControlName="locality" />
+          </div>
+        </div>
+
+        <div class="ui-g-12">
+          <b><span style="color: red">*</span></b>
+          <label for="address">Adresa:</label>
+          <input id="address" pInputText type="text" style="width: 100%;" formControlName="address" />
+        </div>
+
+        <div class="ui-g-12">
+          <b><span style="color: red">*</span></b>
+          <label for="imgs">Incarca Imagini:</label>
+          <span style="color: red; font-size: 12px;"> ( minim doua imagini )</span>
+        </div>
+
+        <div class="ui-g-12">
+          <p-fileUpload mode="basic" accept="image/*" maxFileSize="1000000"
+            (onSelect)="uploadFile($event.xhr,$event.files,$event)" chooseLabel="Alege"></p-fileUpload>
+        </div>
+
+        <div *ngIf="img" style="display: inline-flex;">
+          <div *ngFor="let item of img;">
+
+            <div style="margin-right: 10px;">
+              <img [src]="item" style="width: 100px; height: 100px">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+
+  <div class="wrap">
+    <button class="button" (click)="pageChanged()">Pasul Urmator</button>
+  </div>
+
+</div>

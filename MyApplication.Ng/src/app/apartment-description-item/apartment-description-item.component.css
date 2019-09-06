@@ -1,0 +1,60 @@
+.content {
+    width: 80%;
+    padding: 0 20px 2% 20px;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    margin-left: 10%;
+    box-shadow: 0px 0px 30px 10px #d0d0d0 inset;
+}
+
+p {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+.wrap {
+    height: 100%;
+    text-align: center;
+    margin-top: 40%;
+}
+
+.button {
+    width: 120px;
+    height: 55px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:hover {
+    background-color: rgb(46, 208, 229);
+    box-shadow: 0px 15px 20px rgba(44, 163, 179, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+:host>>>.ui-fieldset {
+    border: 1px solid #c8c8c8;
+    background-color: #eaeaea;
+    color: #333333;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+:host>>>.ui-fileupload {
+    text-align: center;
+}
+
+:host>>>.ui-inputtext.ng-dirty.ng-invalid {
+    border: 1px solid #ff0a0a;
+}

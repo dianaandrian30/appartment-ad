@@ -1,0 +1,6 @@
+:host>>>.ui-steps-item {
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 33%;
+}

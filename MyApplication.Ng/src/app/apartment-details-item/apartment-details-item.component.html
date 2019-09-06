@@ -1,0 +1,93 @@
+<div class="content">
+
+  <p-messages [value]="msgs"></p-messages>
+
+  <div class="ui-g-12" style="display: inline-flex;">
+    <img src="../assets/13.png" alt="Smiley face" height="80" width="80">
+    <p> Detalii Imobil </p>
+  </div>
+
+  <form [formGroup]="itemForm">
+    <div class="ui-g-12">
+
+      <div class="ui-g-4">
+        <b><span style="color: red">*</span></b>
+        <label for="nrOfRooms">Numar Camere:</label>
+        <p-dropdown [options]="typeOfApartmentOptions" placeholder="Alege" [style]="{'width':'100%'}"
+          formControlName="nrOfRooms">
+        </p-dropdown>
+      </div>
+
+      <div class="ui-g-4">
+        <b><span style="color: red">*</span></b>
+        <label for="resfeatures">Compartimentare:</label>
+        <p-dropdown [options]="resfeaturesOptions" placeholder="Alege" [style]="{'width':'100%'}"
+          formControlName="resfeatures">
+        </p-dropdown>
+      </div>
+
+      <div class="ui-g-4">
+        <b><span style="color: red">*</span></b>
+        <label for="confort">Confort:</label>
+        <p-dropdown [options]="confortOptions" placeholder="Alege" [style]="{'width':'100%'}" formControlName="confort">
+        </p-dropdown>
+      </div>
+    </div>
+
+    <div style=" float: left; width: 55%;">
+      <div class="ui-g-12" style="margin-top: 3em;">
+        <div class="ui-g-6">
+          <b><span style="color: red">*</span></b>
+          <label for="surface">Suprafata Utila:</label>
+          <input id="surface" pInputText type="text" style="width: 100%;" formControlName="surface" />
+        </div>
+
+        <div class="ui-g-6">
+          <b><span style="color: red">*</span></b>
+          <label for="yearofbuilding">Anul Constructiei:</label>
+          <!-- <input id="yearofbuilding" pInputText type="text" style="width: 100%;" formControlName="yearofbuilding" /> -->
+          <p-inputMask mask="9999" placeholder="9999" [style]="{'width':'100%'}" formControlName="yearofbuilding">
+          </p-inputMask>
+          <span style="font-size: 12px; color: red">( Minim 1800 )</span>
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-6">
+          <label for="nrOfBathrooms">Numar Bai:</label>
+          <input id="nrOfBathrooms" pInputText type="text" style="width: 100%;" formControlName="nrOfBathrooms" />
+        </div>
+
+        <div class="ui-g-6">
+          <label for="levelno">Numar Nivele:</label>
+          <input id="levelno" pInputText type="text" style="width: 100%;" formControlName="levelno" />
+        </div>
+      </div>
+
+      <div class="ui-g-12">
+        <div class="ui-g-6">
+          <label for="parking">Locuri Parcare:</label>
+          <input id="parking" pInputText type="text" style="width: 100%;" formControlName="parking" />
+        </div>
+
+        <div class="ui-g-6">
+          <label for="code">Cod Identificare:</label>
+          <input id="code" pInputText type="text" style="width: 100%;" formControlName="code" />
+        </div>
+      </div>
+    </div>
+
+    <div style="float: right;">
+      <p-galleria [images]="images" panelWidth="500" panelHeight="313" [autoPlay]="true" [showCaption]="false">
+      </p-galleria>
+    </div>
+  </form>
+
+  <div class="wrap" style="float: left; margin-left: 15%;">
+    <button class="button" (click)="goBack()">Inapoi</button>
+  </div>
+
+  <div class="wrap" style="float: right; margin-right: 15%;">
+    <button class="button" (click)="nextItem()">Pasul Urmator</button>
+  </div>
+</div>

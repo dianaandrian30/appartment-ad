@@ -1,0 +1,24 @@
+<!-- ------------- GALERIA ----------- -->
+<app-display-gallery></app-display-gallery>
+
+<p-steps [model]="items" [(activeIndex)]="activeIndex" [style]="{'width':'80%', 'margin-left':'10%'}"></p-steps>
+
+
+<!-- ITEM 1 -->
+<ng-container *ngIf="displayDescriptionComponent">
+  <app-apartment-description-item [activeIndex]="activeIndex" (itemToGo)="onNextItemToGo($event)">
+  </app-apartment-description-item>
+</ng-container>
+
+
+<!-- ITEM 2 -->
+<ng-container *ngIf="displayDetailsComponent">
+  <app-apartment-details-item [activeIndex]="activeIndex" (itemToGo)="onNextItemToGo($event)">
+  </app-apartment-details-item>
+</ng-container>
+
+
+<!-- ITEM 3 -->
+<ng-container *ngIf="displayContactDetailsComponent">
+  <app-contact-details-item [activeIndex]="activeIndex" (itemToGo)="onNextItemToGo($event)"></app-contact-details-item>
+</ng-container>
